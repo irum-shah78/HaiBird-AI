@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "29LT Arapix TRIAL";
+  src: url("./fonts/29LTArapixTRIAL-RegularTRIAL.otf") format("woff");
+  font-style: normal;
+}
