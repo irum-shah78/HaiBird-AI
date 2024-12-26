@@ -16,13 +16,13 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
-            <Link href="#" className="text-[#D6D6D6] transition duration-150">
+            <Link to="/home" className="text-[#D6D6D6] transition duration-150">
               Home
             </Link>
-            <Link href="#" className="text-[#D6D6D6] transition duration-150">
+            <Link to="/upload-documents" className="text-[#D6D6D6] transition duration-150">
               Upload Document
             </Link>
-            <Link href="#" className="text-[#D6D6D6] transition duration-150">
+            <Link to="/ask-questions" className="text-[#D6D6D6] transition duration-150">
               Ask a Question
             </Link>
           </div>

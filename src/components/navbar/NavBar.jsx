@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import navLogo from "../../assets/navbar-logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const getLinkClass = (path) => {
+    return location.pathname === path
+      ? "text-black"
+      : "text-[#5E5E5E] hover:text-black";
   };
 
   return (
@@ -25,19 +32,25 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/home"
-              className="text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/home"
+              )} px-3 py-2 rounded-md font-medium`}
             >
               Home
             </Link>
             <Link
               to="/upload-documents"
-              className="text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/upload-documents"
+              )} px-3 py-2 rounded-md font-medium`}
             >
               Upload Documents
             </Link>
             <Link
-              to="/ask-question"
-              className="text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              to="/ask-questions"
+              className={`${getLinkClass(
+                "/ask-questions"
+              )} px-3 py-2 rounded-md font-medium`}
             >
               Ask a Question
             </Link>
@@ -46,7 +59,9 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
             <Link
               to="/signin"
-              className="text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/signin"
+              )} px-3 py-2 rounded-md font-medium`}
             >
               Sign In
             </Link>
@@ -74,25 +89,33 @@ const Navbar = () => {
           <div className="px-4 pt-4 pb-6 space-y-3">
             <Link
               to="/home"
-              className="block text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/home"
+              )} block px-3 py-2 rounded-md font-medium`}
             >
               Home
             </Link>
             <Link
               to="/upload-documents"
-              className="block text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/upload-documents"
+              )} block px-3 py-2 rounded-md font-medium`}
             >
               Upload Documents
             </Link>
             <Link
-              to="/ask-question"
-              className="block text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              to="/ask-questions"
+              className={`${getLinkClass(
+                "/ask-questions"
+              )} block px-3 py-2 rounded-md font-medium`}
             >
               Ask a Question
             </Link>
             <Link
               to="/signin"
-              className="block text-[#5E5E5E] hover:text-black px-3 py-2 rounded-md font-medium"
+              className={`${getLinkClass(
+                "/signin"
+              )} block px-3 py-2 rounded-md font-medium`}
             >
               Sign In
             </Link>
